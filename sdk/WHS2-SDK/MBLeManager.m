@@ -154,8 +154,6 @@
     if ([service.UUID.data isEqualToData:self.whsServiceUUID.data]) {
         for (CBCharacteristic *characteristic in service.characteristics){
             if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:CharacteristicsWhsUuid]]){
-                _whsCharacteristics =[self findCharacteristics:service.characteristics
-                                                          uuid:self.whsCharacteristicsUUID];
                 self.whsService = [[MBWhsService alloc]initWithPeripheral:peripheral];
                 
                 if (![self.connectedPeripherals containsObject:_whsService]){
@@ -167,15 +165,6 @@
             }
         }
     }
-}
-
--(CBCharacteristic *)findCharacteristics:(NSArray *)characteristics uuid:(CBUUID *)uuid{
-    for (CBCharacteristic *characteristic in characteristics) {
-        if ([characteristic.UUID.data isEqualToData:uuid.data]){
-            return characteristic;
-        }
-    }
-    return nil;
 }
 
 - (void)setNotifyAllPeripherals:(BOOL)value{

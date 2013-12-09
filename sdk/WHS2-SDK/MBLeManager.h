@@ -10,7 +10,6 @@
 
 @property (nonatomic) CBUUID *whsServiceUUID;
 @property (nonatomic) CBUUID *whsCharacteristicsUUID;
-@property (nonatomic) CBCharacteristic *whsCharacteristics;
 @property (nonatomic) NSMutableArray *foundPeripherals;
 @property (nonatomic) NSMutableArray *connectedPeripherals;
 
