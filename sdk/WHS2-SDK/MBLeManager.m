@@ -108,11 +108,6 @@
 }
 
 - (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error {
-    [self disconnectIntrinsic];
-}
-
--(void)disconnectIntrinsic {
-    self.isSupport = YES;
 }
 
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral {
@@ -121,7 +116,6 @@
 }
 
 - (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error {
-    [self disconnectIntrinsic];
     [self clearPeripheral:peripheral];
 }
 
