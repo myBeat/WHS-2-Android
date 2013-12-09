@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		82360D2717A9FED0009D7348 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82360D2617A9FED0009D7348 /* Foundation.framework */; };
+		82360D3617A9FED0009D7348 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82360D3517A9FED0009D7348 /* SenTestingKit.framework */; };
+		82360D3817A9FED0009D7348 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82360D3717A9FED0009D7348 /* UIKit.framework */; };
+		82360D3917A9FED0009D7348 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82360D2617A9FED0009D7348 /* Foundation.framework */; };
+		82360D3C17A9FED0009D7348 /* libWHS2-SDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82360D2317A9FED0009D7348 /* libWHS2-SDK.a */; };
+		82360D4217A9FED0009D7348 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 82360D4017A9FED0009D7348 /* InfoPlist.strings */; };
+		82360D4F17A9FEEC009D7348 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82360D4E17A9FEEC009D7348 /* CoreBluetooth.framework */; };
+		82360D6317A9FF47009D7348 /* MBLeConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = 82360D5117A9FF47009D7348 /* MBLeConvert.m */; };
+		82360D6417A9FF47009D7348 /* MBLeConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = 82360D5117A9FF47009D7348 /* MBLeConvert.m */; };
+		82360D6517A9FF47009D7348 /* MBLeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 82360D5317A9FF47009D7348 /* MBLeManager.m */; };
+		82360D6617A9FF47009D7348 /* MBLeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 82360D5317A9FF47009D7348 /* MBLeManager.m */; };
+		82360D6717A9FF47009D7348 /* MBWhsSendCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 82360D5517A9FF47009D7348 /* MBWhsSendCommand.m */; };
+		82360D6817A9FF47009D7348 /* MBWhsSendCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 82360D5517A9FF47009D7348 /* MBWhsSendCommand.m */; };
+		82360D6917A9FF47009D7348 /* MBWhsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 82360D5717A9FF47009D7348 /* MBWhsService.m */; };
+		82360D6A17A9FF47009D7348 /* MBWhsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 82360D5717A9FF47009D7348 /* MBWhsService.m */; };
+		82360D6B17A9FF47009D7348 /* MBWhsWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 82360D5917A9FF47009D7348 /* MBWhsWriter.m */; };
+		82360D6C17A9FF47009D7348 /* MBWhsWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 82360D5917A9FF47009D7348 /* MBWhsWriter.m */; };
+		82360D6D17A9FF47009D7348 /* MBMeasurePqrst.m in Sources */ = {isa = PBXBuildFile; fileRef = 82360D5B17A9FF47009D7348 /* MBMeasurePqrst.m */; };
+		82360D6E17A9FF47009D7348 /* MBMeasurePqrst.m in Sources */ = {isa = PBXBuildFile; fileRef = 82360D5B17A9FF47009D7348 /* MBMeasurePqrst.m */; };
+		82360D6F17A9FF47009D7348 /* MBMeasureRriAverage.m in Sources */ = {isa = PBXBuildFile; fileRef = 82360D5E17A9FF47009D7348 /* MBMeasureRriAverage.m */; };
+		82360D7017A9FF47009D7348 /* MBMeasureRriAverage.m in Sources */ = {isa = PBXBuildFile; fileRef = 82360D5E17A9FF47009D7348 /* MBMeasureRriAverage.m */; };
+		82360D7117A9FF47009D7348 /* MBMeasureRriPeak.m in Sources */ = {isa = PBXBuildFile; fileRef = 82360D6017A9FF47009D7348 /* MBMeasureRriPeak.m */; };
+		82360D7217A9FF47009D7348 /* MBMeasureRriPeak.m in Sources */ = {isa = PBXBuildFile; fileRef = 82360D6017A9FF47009D7348 /* MBMeasureRriPeak.m */; };
+		82360D7317A9FF47009D7348 /* MBWhsDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 82360D6217A9FF47009D7348 /* MBWhsDevice.m */; };
+		82360D7417A9FF47009D7348 /* MBWhsDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 82360D6217A9FF47009D7348 /* MBWhsDevice.m */; };
+		827681971834937F002B9A39 /* MBHeartRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 827681961834937F002B9A39 /* MBHeartRate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		82360D3A17A9FED0009D7348 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82360D1B17A9FED0009D7348 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 82360D2217A9FED0009D7348;
+			remoteInfo = "WHS2-SDK";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		82360D2117A9FED0009D7348 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		82360D2317A9FED0009D7348 /* libWHS2-SDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libWHS2-SDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		82360D2617A9FED0009D7348 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		82360D2A17A9FED0009D7348 /* WHS2-SDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WHS2-SDK-Prefix.pch"; sourceTree = "<group>"; };
+		82360D3417A9FED0009D7348 /* WHS2-SDKTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WHS2-SDKTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		82360D3517A9FED0009D7348 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		82360D3717A9FED0009D7348 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		82360D3F17A9FED0009D7348 /* WHS2-SDKTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WHS2-SDKTests-Info.plist"; sourceTree = "<group>"; };
+		82360D4117A9FED0009D7348 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		82360D4E17A9FEEC009D7348 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		82360D5017A9FF47009D7348 /* MBLeConvert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBLeConvert.h; sourceTree = "<group>"; };
+		82360D5117A9FF47009D7348 /* MBLeConvert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBLeConvert.m; sourceTree = "<group>"; };
+		82360D5217A9FF47009D7348 /* MBLeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBLeManager.h; sourceTree = "<group>"; };
+		82360D5317A9FF47009D7348 /* MBLeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBLeManager.m; sourceTree = "<group>"; };
+		82360D5417A9FF47009D7348 /* MBWhsSendCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBWhsSendCommand.h; sourceTree = "<group>"; };
+		82360D5517A9FF47009D7348 /* MBWhsSendCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBWhsSendCommand.m; sourceTree = "<group>"; };
+		82360D5617A9FF47009D7348 /* MBWhsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBWhsService.h; sourceTree = "<group>"; };
+		82360D5717A9FF47009D7348 /* MBWhsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBWhsService.m; sourceTree = "<group>"; };
+		82360D5817A9FF47009D7348 /* MBWhsWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBWhsWriter.h; sourceTree = "<group>"; };
+		82360D5917A9FF47009D7348 /* MBWhsWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBWhsWriter.m; sourceTree = "<group>"; };
+		82360D5A17A9FF47009D7348 /* MBMeasurePqrst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMeasurePqrst.h; sourceTree = "<group>"; };
+		82360D5B17A9FF47009D7348 /* MBMeasurePqrst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMeasurePqrst.m; sourceTree = "<group>"; };
+		82360D5C17A9FF47009D7348 /* MeasureReceiveProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeasureReceiveProtocol.h; sourceTree = "<group>"; };
+		82360D5D17A9FF47009D7348 /* MBMeasureRriAverage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMeasureRriAverage.h; sourceTree = "<group>"; };
+		82360D5E17A9FF47009D7348 /* MBMeasureRriAverage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMeasureRriAverage.m; sourceTree = "<group>"; };
+		82360D5F17A9FF47009D7348 /* MBMeasureRriPeak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMeasureRriPeak.h; sourceTree = "<group>"; };
+		82360D6017A9FF47009D7348 /* MBMeasureRriPeak.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMeasureRriPeak.m; sourceTree = "<group>"; };
+		82360D6117A9FF47009D7348 /* MBWhsDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBWhsDevice.h; sourceTree = "<group>"; };
+		82360D6217A9FF47009D7348 /* MBWhsDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBWhsDevice.m; sourceTree = "<group>"; };
+		827681951834937F002B9A39 /* MBHeartRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBHeartRate.h; sourceTree = "<group>"; };
+		827681961834937F002B9A39 /* MBHeartRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBHeartRate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		82360D2017A9FED0009D7348 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82360D4F17A9FEEC009D7348 /* CoreBluetooth.framework in Frameworks */,
+				82360D2717A9FED0009D7348 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82360D3017A9FED0009D7348 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82360D3617A9FED0009D7348 /* SenTestingKit.framework in Frameworks */,
+				82360D3817A9FED0009D7348 /* UIKit.framework in Frameworks */,
+				82360D3917A9FED0009D7348 /* Foundation.framework in Frameworks */,
+				82360D3C17A9FED0009D7348 /* libWHS2-SDK.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		82360D1A17A9FED0009D7348 = {
+			isa = PBXGroup;
+			children = (
+				82360D4E17A9FEEC009D7348 /* CoreBluetooth.framework */,
+				82360D2817A9FED0009D7348 /* WHS2-SDK */,
+				82360D3D17A9FED0009D7348 /* WHS2-SDKTests */,
+				82360D2517A9FED0009D7348 /* Frameworks */,
+				82360D2417A9FED0009D7348 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		82360D2417A9FED0009D7348 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				82360D2317A9FED0009D7348 /* libWHS2-SDK.a */,
+				82360D3417A9FED0009D7348 /* WHS2-SDKTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		82360D2517A9FED0009D7348 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				82360D2617A9FED0009D7348 /* Foundation.framework */,
+				82360D3517A9FED0009D7348 /* SenTestingKit.framework */,
+				82360D3717A9FED0009D7348 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		82360D2817A9FED0009D7348 /* WHS2-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				8276819A18349390002B9A39 /* Calculation */,
+				82360D7517A9FF89009D7348 /* Measure */,
+				82360D5217A9FF47009D7348 /* MBLeManager.h */,
+				82360D5317A9FF47009D7348 /* MBLeManager.m */,
+				82360D5017A9FF47009D7348 /* MBLeConvert.h */,
+				82360D5117A9FF47009D7348 /* MBLeConvert.m */,
+				82360D5417A9FF47009D7348 /* MBWhsSendCommand.h */,
+				82360D5517A9FF47009D7348 /* MBWhsSendCommand.m */,
+				82360D5617A9FF47009D7348 /* MBWhsService.h */,
+				82360D5717A9FF47009D7348 /* MBWhsService.m */,
+				82360D5817A9FF47009D7348 /* MBWhsWriter.h */,
+				82360D5917A9FF47009D7348 /* MBWhsWriter.m */,
+				82360D6117A9FF47009D7348 /* MBWhsDevice.h */,
+				82360D6217A9FF47009D7348 /* MBWhsDevice.m */,
+				82360D2917A9FED0009D7348 /* Supporting Files */,
+			);
+			path = "WHS2-SDK";
+			sourceTree = "<group>";
+		};
+		82360D2917A9FED0009D7348 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				82360D2A17A9FED0009D7348 /* WHS2-SDK-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		82360D3D17A9FED0009D7348 /* WHS2-SDKTests */ = {
+			isa = PBXGroup;
+			children = (
+				82360D3E17A9FED0009D7348 /* Supporting Files */,
+			);
+			path = "WHS2-SDKTests";
+			sourceTree = "<group>";
+		};
+		82360D3E17A9FED0009D7348 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				82360D3F17A9FED0009D7348 /* WHS2-SDKTests-Info.plist */,
+				82360D4017A9FED0009D7348 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		82360D7517A9FF89009D7348 /* Measure */ = {
+			isa = PBXGroup;
+			children = (
+				82360D5C17A9FF47009D7348 /* MeasureReceiveProtocol.h */,
+				82360D5A17A9FF47009D7348 /* MBMeasurePqrst.h */,
+				82360D5B17A9FF47009D7348 /* MBMeasurePqrst.m */,
+				82360D5D17A9FF47009D7348 /* MBMeasureRriAverage.h */,
+				82360D5E17A9FF47009D7348 /* MBMeasureRriAverage.m */,
+				82360D5F17A9FF47009D7348 /* MBMeasureRriPeak.h */,
+				82360D6017A9FF47009D7348 /* MBMeasureRriPeak.m */,
+			);
+			name = Measure;
+			sourceTree = "<group>";
+		};
+		8276819A18349390002B9A39 /* Calculation */ = {
+			isa = PBXGroup;
+			children = (
+				827681951834937F002B9A39 /* MBHeartRate.h */,
+				827681961834937F002B9A39 /* MBHeartRate.m */,
+			);
+			name = Calculation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		82360D2217A9FED0009D7348 /* WHS2-SDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 82360D4817A9FED0009D7348 /* Build configuration list for PBXNativeTarget "WHS2-SDK" */;
+			buildPhases = (
+				82360D1F17A9FED0009D7348 /* Sources */,
+				82360D2017A9FED0009D7348 /* Frameworks */,
+				82360D2117A9FED0009D7348 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WHS2-SDK";
+			productName = "WHS2-SDK";
+			productReference = 82360D2317A9FED0009D7348 /* libWHS2-SDK.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		82360D3317A9FED0009D7348 /* WHS2-SDKTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 82360D4B17A9FED0009D7348 /* Build configuration list for PBXNativeTarget "WHS2-SDKTests" */;
+			buildPhases = (
+				82360D2F17A9FED0009D7348 /* Sources */,
+				82360D3017A9FED0009D7348 /* Frameworks */,
+				82360D3117A9FED0009D7348 /* Resources */,
+				82360D3217A9FED0009D7348 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				82360D3B17A9FED0009D7348 /* PBXTargetDependency */,
+			);
+			name = "WHS2-SDKTests";
+			productName = "WHS2-SDKTests";
+			productReference = 82360D3417A9FED0009D7348 /* WHS2-SDKTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		82360D1B17A9FED0009D7348 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "UNION TOOL";
+			};
+			buildConfigurationList = 82360D1E17A9FED0009D7348 /* Build configuration list for PBXProject "WHS2-SDK" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 82360D1A17A9FED0009D7348;
+			productRefGroup = 82360D2417A9FED0009D7348 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				82360D2217A9FED0009D7348 /* WHS2-SDK */,
+				82360D3317A9FED0009D7348 /* WHS2-SDKTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		82360D3117A9FED0009D7348 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82360D4217A9FED0009D7348 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		82360D3217A9FED0009D7348 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		82360D1F17A9FED0009D7348 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82360D6317A9FF47009D7348 /* MBLeConvert.m in Sources */,
+				82360D6517A9FF47009D7348 /* MBLeManager.m in Sources */,
+				82360D6717A9FF47009D7348 /* MBWhsSendCommand.m in Sources */,
+				82360D6917A9FF47009D7348 /* MBWhsService.m in Sources */,
+				82360D6B17A9FF47009D7348 /* MBWhsWriter.m in Sources */,
+				82360D6D17A9FF47009D7348 /* MBMeasurePqrst.m in Sources */,
+				827681971834937F002B9A39 /* MBHeartRate.m in Sources */,
+				82360D6F17A9FF47009D7348 /* MBMeasureRriAverage.m in Sources */,
+				82360D7117A9FF47009D7348 /* MBMeasureRriPeak.m in Sources */,
+				82360D7317A9FF47009D7348 /* MBWhsDevice.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82360D2F17A9FED0009D7348 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82360D6417A9FF47009D7348 /* MBLeConvert.m in Sources */,
+				82360D6617A9FF47009D7348 /* MBLeManager.m in Sources */,
+				82360D6817A9FF47009D7348 /* MBWhsSendCommand.m in Sources */,
+				82360D6A17A9FF47009D7348 /* MBWhsService.m in Sources */,
+				82360D6C17A9FF47009D7348 /* MBWhsWriter.m in Sources */,
+				82360D6E17A9FF47009D7348 /* MBMeasurePqrst.m in Sources */,
+				82360D7017A9FF47009D7348 /* MBMeasureRriAverage.m in Sources */,
+				82360D7217A9FF47009D7348 /* MBMeasureRriPeak.m in Sources */,
+				82360D7417A9FF47009D7348 /* MBWhsDevice.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		82360D3B17A9FED0009D7348 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 82360D2217A9FED0009D7348 /* WHS2-SDK */;
+			targetProxy = 82360D3A17A9FED0009D7348 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		82360D4017A9FED0009D7348 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				82360D4117A9FED0009D7348 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		82360D4617A9FED0009D7348 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		82360D4717A9FED0009D7348 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		82360D4917A9FED0009D7348 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/WHS2_SDK.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WHS2-SDK/WHS2-SDK-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		82360D4A17A9FED0009D7348 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/WHS2_SDK.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WHS2-SDK/WHS2-SDK-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		82360D4C17A9FED0009D7348 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WHS2-SDK/WHS2-SDK-Prefix.pch";
+				INFOPLIST_FILE = "WHS2-SDKTests/WHS2-SDKTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		82360D4D17A9FED0009D7348 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WHS2-SDK/WHS2-SDK-Prefix.pch";
+				INFOPLIST_FILE = "WHS2-SDKTests/WHS2-SDKTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		82360D1E17A9FED0009D7348 /* Build configuration list for PBXProject "WHS2-SDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82360D4617A9FED0009D7348 /* Debug */,
+				82360D4717A9FED0009D7348 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		82360D4817A9FED0009D7348 /* Build configuration list for PBXNativeTarget "WHS2-SDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82360D4917A9FED0009D7348 /* Debug */,
+				82360D4A17A9FED0009D7348 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		82360D4B17A9FED0009D7348 /* Build configuration list for PBXNativeTarget "WHS2-SDKTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82360D4C17A9FED0009D7348 /* Debug */,
+				82360D4D17A9FED0009D7348 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 82360D1B17A9FED0009D7348 /* Project object */;
+}

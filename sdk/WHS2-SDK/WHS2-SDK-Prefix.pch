@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'WHS2-SDK' target in the 'WHS2-SDK' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
