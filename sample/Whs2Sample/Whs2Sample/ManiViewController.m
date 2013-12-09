@@ -12,6 +12,9 @@
 #import "SettingMasterViewController.h"
 #import "WhsSampleService.h"
 
+NSString* const ObserverKeyRecieveData = @"recievedData";
+NSString* const ObserverKeyFindDevice = @"foundPeripheral";
+
 @interface ManiViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic) NSMutableArray *peripheralLists;
 @property (nonatomic) NSTimer *stopScanTimer;
@@ -261,7 +264,6 @@
     for(CBPeripheral *cbperipheral in self.leManager.foundPeripherals) {
         if (![self existsTableViewPeripheral:cbperipheral]){
             [self.peripheralLists addObject:[[WhsSampleService alloc]initWithPeripheral:cbperipheral]];
-            [self.tableView reloadData];
         }
     }
 }
@@ -293,22 +295,33 @@
 }
 
 - (void)addBluetoothObserver {
+    //計測データ受信の監視
     [self.leManager addObserver:self
-                     forKeyPath:@"recievedData"
+                     forKeyPath:ObserverKeyRecieveData
+                        options:NSKeyValueObservingOptionNew
+                        context:NULL];
+    //デバイス発見の監視
+    [self.leManager addObserver:self
+                     forKeyPath:ObserverKeyFindDevice
                         options:NSKeyValueObservingOptionNew
                         context:NULL];
 }
 
 - (void)removeBluetoothObserver {
-    [self.leManager removeObserver:self forKeyPath:@"recievedData"];
+    [self.leManager removeObserver:self forKeyPath:ObserverKeyRecieveData];
+    [self.leManager removeObserver:self forKeyPath:ObserverKeyFindDevice];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
                         change:(NSDictionary *)change
                        context:(void *)context {
-    if([keyPath isEqualToString:@"recievedData"])
+    if([keyPath isEqualToString:ObserverKeyRecieveData]) {
         [self updateTableViewData];
+    }
+    else if([keyPath isEqualToString:ObserverKeyFindDevice]) {
+        [self updateTableViewData];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

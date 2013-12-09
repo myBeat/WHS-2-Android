@@ -10,6 +10,7 @@
 
 @property (nonatomic) CBUUID *whsServiceUUID;
 @property (nonatomic) CBUUID *whsCharacteristicsUUID;
+
 @property (nonatomic) NSMutableArray *foundPeripherals;
 @property (nonatomic) NSMutableArray *connectedPeripherals;
 
@@ -18,8 +19,7 @@
 
 @property (nonatomic) NSData *recievedData;
 @property (nonatomic) NSDate *recievedDateTime;
-
-@property (nonatomic) NSString *debugMessage;
+@property (nonatomic) CBPeripheral *foundPeripheral;
 
 - (id)init;
 - (void)startScan;
