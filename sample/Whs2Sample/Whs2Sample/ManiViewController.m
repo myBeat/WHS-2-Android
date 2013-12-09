@@ -112,7 +112,7 @@ NSString* const ObserverKeyFindDevice = @"foundPeripheral";
     [self getCellViewRecievedDate:cell].text = [self getDateStringMillisecondFromDate:whs.recievedDateTime];
     
     if (whs.behaviorType == typeBehaviorRri)
-        [self getCellViewHRValue:cell].text = [NSString stringWithFormat:@"%i",[whs getHeartRateFromRri]];
+        [self getCellViewHRValue:cell].text = [NSString stringWithFormat:@"%li",(long)[whs getHeartRateFromRri]];
     else
         [self getCellViewHRValue:cell].text = @"";
 }
