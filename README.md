@@ -9,6 +9,7 @@ iOSとの接続にはCoreBluetooth.Frameworkを利用します。
 - [WHS-2とのBluetooth Low Energy通信の仕様について](通信仕様.md)
 
 - サンプルソース
+  - [サンプルアプリの動作説明](サンプルアプリ動作説明.md)
 
 - サンプルソースドキュメント
 
