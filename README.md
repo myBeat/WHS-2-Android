@@ -6,7 +6,7 @@ WHS-2
 iOSとの接続にはCoreBluetooth.Frameworkを利用します。
 またAndroidとの接続には、Android4.3(API Level 18)で公開されたAPIを利用します。
 
-- [WHS-2とのBluetooth Low Energy通信の仕様について](通信仕様.md)
+- [WHS-2の通信仕様について](通信仕様.md)
 
 - サンプルソース
   - [サンプルアプリの動作説明](サンプルアプリ動作説明.md)
