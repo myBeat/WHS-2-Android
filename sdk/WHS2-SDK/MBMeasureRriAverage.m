@@ -39,31 +39,31 @@
                         KeyAccelerationValueY:@([self getAccelerationYValue]),
                         KeyAccelerationValueZ:@([self getAccelerationZValue]),
                         KeyTemperatureValue:@([self getTemperatureValue]),
-                        KeyRecievedDate:self.recievedDate}];
+                        KeyReceivedDate:self.recievedDate}];
     return result;
 }
 
 #pragma mark - one received data
 - (double)getEcgValue{
-    return [MBLeConvert convertEcg:chars[typeRriAverageRecieveEcg]
-                           char1:chars[typeRriAverageRecieveEcg+1]];
+    return [MBLeConvert convertEcg:chars[typeRriAverageReceiveEcg]
+                           char1:chars[typeRriAverageReceiveEcg+1]];
 }
 
 - (double)getTemperatureValue{
-    return [MBLeConvert convertTemperature:chars[typeRriAverageRecieveTemperature]
-                                   char1:chars[typeRriAverageRecieveTemperature+1]];
+    return [MBLeConvert convertTemperature:chars[typeRriAverageReceiveTemperature]
+                                   char1:chars[typeRriAverageReceiveTemperature+1]];
 }
 
 - (double)getAccelerationXValue{
-    return [MBLeConvert convertAcceleration:chars[typeRriAverageRecieveAccelerationX]];
+    return [MBLeConvert convertAcceleration:chars[typeRriAverageReceiveAccelerationX]];
 }
 
 - (double)getAccelerationYValue{
-    return [MBLeConvert convertAcceleration:chars[typeRriAverageRecieveAccelerationY]];
+    return [MBLeConvert convertAcceleration:chars[typeRriAverageReceiveAccelerationY]];
 }
 
 - (double)getAccelerationZValue{
-    return [MBLeConvert convertAcceleration:chars[typeRriAverageRecieveAccelerationZ]];
+    return [MBLeConvert convertAcceleration:chars[typeRriAverageReceiveAccelerationZ]];
 }
 
 @end

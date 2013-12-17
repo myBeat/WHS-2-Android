@@ -17,8 +17,8 @@
 @property (nonatomic, readonly) BOOL isBTPoweredOn;
 @property (nonatomic, readonly) BOOL isSupport;
 
-@property (nonatomic) NSData *recievedData;
-@property (nonatomic) NSDate *recievedDateTime;
+@property (nonatomic) NSData *receivedData;
+@property (nonatomic) NSDate *receivedDateTime;
 @property (nonatomic) CBPeripheral *foundPeripheral;
 
 - (id)init;

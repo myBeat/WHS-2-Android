@@ -20,7 +20,7 @@ NSString* const KeyAccelerationValueYMinus = @"AccelerationMinusY";
 NSString* const KeyAccelerationValueZMinus = @"AccelerationMinusZ";
 NSString* const KeyEcgValue = @"Ecg";
 NSString* const KeyTemperatureValue = @"Temperature";
-NSString* const KeyRecievedDate = @"RecievedDate";
+NSString* const KeyReceivedDate = @"RecievedDate";
 
 @interface MBWhsService()
 @end
@@ -57,22 +57,22 @@ NSString* const KeyRecievedDate = @"RecievedDate";
     _rssi = [_peripheral.RSSI integerValue];
     
     //モードを考慮して受信データを読み込む
-    _reciever = [self createRecieverInstance:recievedData date:date];
-    if (!_reciever) {
+    _receiver = [self createReceiverInstance:recievedData date:date];
+    if (!_receiver) {
         return;
     }
     
-    self.recievedDataDictionary = [_reciever getRecieveDatas];
+    self.recievedDataDictionary = [_receiver getRecieveDatas];
 }
 
-- (id<MBMeasureReceiveProtocol>)createRecieverInstance:(NSData *)recievedData date:(NSDate *)date {
-    return [self getMeasureReciever:recievedData date:date];
+- (id<MBMeasureReceiveProtocol>)createReceiverInstance:(NSData *)recievedData date:(NSDate *)date {
+    return [self getMeasureReceiver:recievedData date:date];
 }
 
 #pragma mark -
 #pragma mark Measure receiver
 
-- (id<MBMeasureReceiveProtocol>)getMeasureReciever:(NSData *)data date:(NSDate *)date {
+- (id<MBMeasureReceiveProtocol>)getMeasureReceiver:(NSData *)data date:(NSDate *)date {
     unsigned char chars[20];
     [data getBytes:&chars length:data.length];
     

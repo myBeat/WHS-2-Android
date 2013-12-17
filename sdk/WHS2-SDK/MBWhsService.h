@@ -16,7 +16,7 @@ extern NSString* const KeyAccelerationValueYMinus;
 extern NSString* const KeyAccelerationValueZMinus;
 extern NSString* const KeyEcgValue;
 extern NSString* const KeyTemperatureValue;
-extern NSString* const KeyRecievedDate;
+extern NSString* const KeyReceivedDate;
 
 typedef NS_ENUM(NSInteger, BleStatus) {
     typeBleStatusNotConnected = 1,
@@ -59,10 +59,10 @@ typedef NS_ENUM(NSInteger, BehaviorType) {
 @property (nonatomic) NSData *recievedData;
 @property (nonatomic) BehaviorType behaviorType;
 @property (nonatomic) AccelerationType accelerationType;
-@property (nonatomic) id<MBMeasureReceiveProtocol> reciever;
+@property (nonatomic) id<MBMeasureReceiveProtocol> receiver;
 
 - (id)initWithPeripheral:(CBPeripheral *)peripheral;
 - (void)setRecievedMeasureData:(NSData *)recievedData date:(NSDate *)date;
-- (id<MBMeasureReceiveProtocol>)getMeasureReciever:(NSData *)data date:(NSDate *)date;
+- (id<MBMeasureReceiveProtocol>)getMeasureReceiver:(NSData *)data date:(NSDate *)date;
 
 @end

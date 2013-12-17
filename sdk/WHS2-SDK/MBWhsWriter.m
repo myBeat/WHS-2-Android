@@ -21,7 +21,7 @@ NSString* const BleCommandNoMark = @"0";
         self.leService = leService;
         
         [self.leManager addObserver:self
-                         forKeyPath:@"recievedData"
+                         forKeyPath:@"receivedData"
                             options:NSKeyValueObservingOptionNew
                             context:(__bridge void *)self];
         self.commandQue = [[NSMutableDictionary alloc]init];
@@ -62,7 +62,7 @@ NSString* const BleCommandNoMark = @"0";
 }
 
 - (void)dealloc {
-    [self.leManager removeObserver:self forKeyPath:@"recievedData"];
+    [self.leManager removeObserver:self forKeyPath:@"receivedData"];
 }
 
 #pragma mark -
@@ -86,14 +86,14 @@ NSString* const BleCommandNoMark = @"0";
 }
 
 - (void)updateValue {
-    if (self.leManager.recievedData==nil) return;
+    if (self.leManager.receivedData==nil) return;
     
-    unsigned char scratchVal[self.leManager.recievedData.length];
-    [self.leManager.recievedData getBytes:&scratchVal
-                                   length:self.leManager.recievedData.length];
+    unsigned char scratchVal[self.leManager.receivedData.length];
+    [self.leManager.receivedData getBytes:&scratchVal
+                                   length:self.leManager.receivedData.length];
     
     NSInteger dataLength = [[NSNumber numberWithChar:scratchVal[0]]integerValue];
-    NSString *stringFromData = [[NSString alloc]initWithData:self.leManager.recievedData
+    NSString *stringFromData = [[NSString alloc]initWithData:self.leManager.receivedData
                                                     encoding:NSUTF8StringEncoding];
     NSString *command = [stringFromData substringWithRange:NSMakeRange(1, 2)];
     

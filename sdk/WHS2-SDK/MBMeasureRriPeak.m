@@ -45,7 +45,7 @@
                         KeyAccelerationValueYMinus:@([self getAccelerationYminusValue]),
                         KeyAccelerationValueZMinus:@([self getAccelerationZminusValue]),
                         KeyTemperatureValue:@([self getTemperatureValue]),
-                        KeyRecievedDate:self.recievedDate}];
+                        KeyReceivedDate:self.recievedDate}];
     return result;
 }
 

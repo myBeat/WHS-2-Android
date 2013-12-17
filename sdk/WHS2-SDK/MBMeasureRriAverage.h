@@ -10,15 +10,15 @@
 #import "MeasureReceiveProtocol.h"
 
 typedef NS_ENUM(NSInteger, RriAverageWaveDataFormat) {
-    typeRriAverageRecieveLength = 0,
-    typeRriAverageRecieveSetting = 1,
-    typeRriAverageRecieveBlank = 2,
-    typeRriAverageRecieveNumber = 3,
-    typeRriAverageRecieveEcg = 4,
-    typeRriAverageRecieveTemperature = 6,
-    typeRriAverageRecieveAccelerationX = 8,
-    typeRriAverageRecieveAccelerationY = 9,
-    typeRriAverageRecieveAccelerationZ = 10,
+    typeRriAverageReceiveLength = 0,
+    typeRriAverageReceiveSetting = 1,
+    typeRriAverageReceiveBlank = 2,
+    typeRriAverageReceiveNumber = 3,
+    typeRriAverageReceiveEcg = 4,
+    typeRriAverageReceiveTemperature = 6,
+    typeRriAverageReceiveAccelerationX = 8,
+    typeRriAverageReceiveAccelerationY = 9,
+    typeRriAverageReceiveAccelerationZ = 10,
 };
 
 @interface MBMeasureRriAverage : NSObject<MBMeasureReceiveProtocol>

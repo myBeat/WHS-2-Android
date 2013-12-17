@@ -14,7 +14,7 @@
 
 @property (nonatomic) NSDate *recievedDate;
 
-- (id)initWithData:(NSData *)recievedData recievedDate:(NSDate *)recievedDate;
+- (id)initWithData:(NSData *)receivedData recievedDate:(NSDate *)recievedDate;
 
 - (NSMutableArray *)getRecieveDatas;
 

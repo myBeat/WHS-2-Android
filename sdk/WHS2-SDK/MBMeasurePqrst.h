@@ -9,27 +9,27 @@
 #import <Foundation/Foundation.h>
 #import "MeasureReceiveProtocol.h"
 
-typedef NS_ENUM(NSInteger, PqrstRecieveDataFormat) {
-    typePqrstRecieveLength = 0,
-    typePqrstRecieveSetting = 1,
-    typePqrstRecieveBlank = 2,
-    typePqrstRecieveNumber = 3,
-    typePqrstRecieveEcg1 = 4,
-    typePqrstRecieveAccelX1 = 6,
-    typePqrstRecieveAccelY1 = 7,
-    typePqrstRecieveAccelZ1 = 8,
-    typePqrstRecieveEcg2 = 9,
-    typePqrstRecieveAccelX2 = 11,
-    typePqrstRecieveAccelY2 = 12,
-    typePqrstRecieveAccelZ2 = 13,
-    typePqrstRecieveTemperature = 14,
+typedef NS_ENUM(NSInteger, PqrstReceiveDataFormat) {
+    typePqrstReceiveLength = 0,
+    typePqrstReceiveSetting = 1,
+    typePqrstReceiveBlank = 2,
+    typePqrstReceiveNumber = 3,
+    typePqrstReceiveEcg1 = 4,
+    typePqrstReceiveAccelX1 = 6,
+    typePqrstReceiveAccelY1 = 7,
+    typePqrstReceiveAccelZ1 = 8,
+    typePqrstReceiveEcg2 = 9,
+    typePqrstReceiveAccelX2 = 11,
+    typePqrstReceiveAccelY2 = 12,
+    typePqrstReceiveAccelZ2 = 13,
+    typePqrstReceiveTemperature = 14,
 };
 
 @interface MBMeasurePqrst : NSObject<MBMeasureReceiveProtocol>
 
 @property (nonatomic) NSDate *recievedDate;
 
-- (id)initWithData:(NSData *)recievedData recievedDate:(NSDate *)recievedDate;
+- (id)initWithData:(NSData *)receivedData recievedDate:(NSDate *)recievedDate;
 - (double)getEcgValue;
 - (double)getAccelerationXValue;
 - (double)getAccelerationYValue;

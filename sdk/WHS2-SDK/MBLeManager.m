@@ -6,7 +6,6 @@
 @property (nonatomic) NSTimer *scanStopTimer;
 @property (nonatomic) BOOL isBTPoweredOn;
 @property (nonatomic) BOOL isSupport;
-@property (nonatomic) id<MBMeasureReceiveProtocol> reciever;
 @end
 
 @implementation MBLeManager
@@ -198,11 +197,11 @@
         return;
     }
     
-    _recievedDateTime = [NSDate date];
+    _receivedDateTime = [NSDate date];
     for (MBWhsService *whs in self.connectedPeripherals){
         if (whs.peripheral == peripheral){
-            [whs setRecievedMeasureData:characteristic.value date:_recievedDateTime];
-            self.recievedData = characteristic.value;
+            [whs setRecievedMeasureData:characteristic.value date:_receivedDateTime];
+            self.receivedData = characteristic.value;
             break;
         }
     }
