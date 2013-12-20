@@ -23,14 +23,14 @@ typedef NS_ENUM(NSInteger, RriAverageWaveDataFormat) {
 
 @interface MBMeasureRriAverage : NSObject<MBMeasureReceiveProtocol>
 
-@property (nonatomic) NSDate *recievedDate;
+@property (nonatomic) NSDate *receivedDate;
 
-- (id)initWithData:(NSData *)recievedData recievedDate:(NSDate *)recievedDate;
+- (id)initWithData:(NSData *)receivedData receivedDate:(NSDate *)receivedDate;
 - (double)getEcgValue;
 - (double)getAccelerationXValue;
 - (double)getAccelerationYValue;
 - (double)getAccelerationZValue;
 - (double)getTemperatureValue;
-- (NSMutableArray *)getRecieveDatas;
+- (NSMutableArray *)getReceiveDatas;
 
 @end

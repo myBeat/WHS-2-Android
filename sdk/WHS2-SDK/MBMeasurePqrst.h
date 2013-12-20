@@ -27,9 +27,9 @@ typedef NS_ENUM(NSInteger, PqrstReceiveDataFormat) {
 
 @interface MBMeasurePqrst : NSObject<MBMeasureReceiveProtocol>
 
-@property (nonatomic) NSDate *recievedDate;
+@property (nonatomic) NSDate *receivedDate;
 
-- (id)initWithData:(NSData *)receivedData recievedDate:(NSDate *)recievedDate;
+- (id)initWithData:(NSData *)receivedData receivedDate:(NSDate *)receivedDate;
 - (double)getEcgValue;
 - (double)getAccelerationXValue;
 - (double)getAccelerationYValue;
@@ -39,6 +39,6 @@ typedef NS_ENUM(NSInteger, PqrstReceiveDataFormat) {
 - (double)getAccelerationY2Value;
 - (double)getAccelerationZ2Value;
 - (double)getTemperatureValue;
-- (NSMutableArray *)getRecieveDatas;
+- (NSMutableArray *)getReceiveDatas;
 
 @end

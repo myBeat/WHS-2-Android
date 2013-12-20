@@ -20,7 +20,7 @@ NSString* const KeyAccelerationValueYMinus = @"AccelerationMinusY";
 NSString* const KeyAccelerationValueZMinus = @"AccelerationMinusZ";
 NSString* const KeyEcgValue = @"Ecg";
 NSString* const KeyTemperatureValue = @"Temperature";
-NSString* const KeyReceivedDate = @"RecievedDate";
+NSString* const KeyReceivedDate = @"ReceivedDate";
 
 @interface MBWhsService()
 @end
@@ -41,13 +41,13 @@ NSString* const KeyReceivedDate = @"RecievedDate";
     return self;
 }
 
-- (void)setRecievedMeasureData:(NSData *)recievedData date:(NSDate *)date {
+- (void)setReceivedMeasureData:(NSData *)receivedData date:(NSDate *)date {
     
-    _recievedDateTime = [NSDate date];
-    _recievedData = recievedData;
+    _receivedDateTime = [NSDate date];
+    _receivedData = receivedData;
     
     unsigned char chars[20];
-    [_recievedData getBytes:&chars length:_recievedData.length];
+    [_receivedData getBytes:&chars length:_receivedData.length];
     
     _behaviorType = [MBLeConvert convertBehaviorMode:chars[1]];
     _accelerationType = [MBLeConvert convertAccelerationMode:chars[1]];
@@ -57,16 +57,16 @@ NSString* const KeyReceivedDate = @"RecievedDate";
     _rssi = [_peripheral.RSSI integerValue];
     
     //モードを考慮して受信データを読み込む
-    _receiver = [self createReceiverInstance:recievedData date:date];
+    _receiver = [self createReceiverInstance:receivedData date:date];
     if (!_receiver) {
         return;
     }
     
-    self.recievedDataDictionary = [_receiver getRecieveDatas];
+    self.receivedDataDictionary = [_receiver getReceiveDatas];
 }
 
-- (id<MBMeasureReceiveProtocol>)createReceiverInstance:(NSData *)recievedData date:(NSDate *)date {
-    return [self getMeasureReceiver:recievedData date:date];
+- (id<MBMeasureReceiveProtocol>)createReceiverInstance:(NSData *)receivedData date:(NSDate *)date {
+    return [self getMeasureReceiver:receivedData date:date];
 }
 
 #pragma mark -
@@ -77,15 +77,15 @@ NSString* const KeyReceivedDate = @"RecievedDate";
     [data getBytes:&chars length:data.length];
     
     if([MBLeConvert convertBehaviorMode:chars[1]] == typeBehaviorPqrst)
-        return [[MBMeasurePqrst alloc] initWithData:data recievedDate:date];
+        return [[MBMeasurePqrst alloc] initWithData:data receivedDate:date];
     
     if([MBLeConvert convertBehaviorMode:chars[1]] == typeBehaviorRri){
         switch ([MBLeConvert convertAccelerationMode:chars[1]]) {
             case typeAccelerationPeak:
-                return [[MBMeasureRriPeak alloc] initWithData:data recievedDate:date];
+                return [[MBMeasureRriPeak alloc] initWithData:data receivedDate:date];
                 
             case typeAccelerationAverage:
-                return [[MBMeasureRriAverage alloc] initWithData:data recievedDate:date];
+                return [[MBMeasureRriAverage alloc] initWithData:data receivedDate:date];
                 
         }
     }

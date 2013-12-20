@@ -20,7 +20,7 @@
     if (self) {
         _heartRate = [[MBHeartRate alloc]init];
         [self addObserver:self
-               forKeyPath:@"recievedDataDictionary"
+               forKeyPath:@"receivedDataDictionary"
                   options:NSKeyValueObservingOptionNew
                   context:NULL];
         
@@ -34,15 +34,15 @@
 
 - (void)removeBluetoothObserver
 {
-    [self removeObserver:self forKeyPath:@"recievedDataDictionary"];
+    [self removeObserver:self forKeyPath:@"receivedDataDictionary"];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
                         change:(NSDictionary *)change
                        context:(void *)context{
-    if([keyPath isEqualToString:@"recievedDataDictionary"]){
-        NSDictionary *dic = [self.recievedDataDictionary objectAtIndex:0];
+    if([keyPath isEqualToString:@"receivedDataDictionary"]){
+        NSDictionary *dic = [self.receivedDataDictionary objectAtIndex:0];
         [_heartRate setRri:[[dic objectForKey:KeyEcgValue] integerValue]];
     }
 }

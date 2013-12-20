@@ -54,15 +54,15 @@ typedef NS_ENUM(NSInteger, BehaviorType) {
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSString *uuid;
 @property (nonatomic) NSInteger rssi;
-@property (nonatomic) NSArray *recievedDataDictionary;
-@property (nonatomic) NSDate *recievedDateTime;
-@property (nonatomic) NSData *recievedData;
+@property (nonatomic) NSArray *receivedDataDictionary;
+@property (nonatomic) NSDate *receivedDateTime;
+@property (nonatomic) NSData *receivedData;
 @property (nonatomic) BehaviorType behaviorType;
 @property (nonatomic) AccelerationType accelerationType;
 @property (nonatomic) id<MBMeasureReceiveProtocol> receiver;
 
 - (id)initWithPeripheral:(CBPeripheral *)peripheral;
-- (void)setRecievedMeasureData:(NSData *)recievedData date:(NSDate *)date;
+- (void)setReceivedMeasureData:(NSData *)receivedData date:(NSDate *)date;
 - (id<MBMeasureReceiveProtocol>)getMeasureReceiver:(NSData *)data date:(NSDate *)date;
 
 @end

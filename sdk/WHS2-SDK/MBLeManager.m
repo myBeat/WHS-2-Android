@@ -200,7 +200,7 @@
     _receivedDateTime = [NSDate date];
     for (MBWhsService *whs in self.connectedPeripherals){
         if (whs.peripheral == peripheral){
-            [whs setRecievedMeasureData:characteristic.value date:_receivedDateTime];
+            [whs setReceivedMeasureData:characteristic.value date:_receivedDateTime];
             self.receivedData = characteristic.value;
             break;
         }

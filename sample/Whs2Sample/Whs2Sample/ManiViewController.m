@@ -12,7 +12,7 @@
 #import "SettingMasterViewController.h"
 #import "WhsSampleService.h"
 
-NSString* const ObserverKeyRecieveData = @"recievedData";
+NSString* const ObserverKeyReceiveData = @"receivedData";
 NSString* const ObserverKeyFindDevice = @"foundPeripheral";
 
 @interface ManiViewController ()<UITableViewDataSource, UITableViewDelegate>
@@ -90,7 +90,7 @@ NSString* const ObserverKeyFindDevice = @"foundPeripheral";
     //基本情報
     [self setCellBasicValue:cell whs:whs];
     
-    if (!whs.recievedDataDictionary){
+    if (!whs.receivedDataDictionary){
         [self clearCellValue:cell];
         return;
     }
@@ -109,7 +109,7 @@ NSString* const ObserverKeyFindDevice = @"foundPeripheral";
     else
         [self getCellViewAccelerationMode:cell].text = @"";
     
-    [self getCellViewRecievedDate:cell].text = [self getDateStringMillisecondFromDate:whs.recievedDateTime];
+    [self getCellViewReceivedDate:cell].text = [self getDateStringMillisecondFromDate:whs.receivedDateTime];
     
     if (whs.behaviorType == typeBehaviorRri)
         [self getCellViewHRValue:cell].text = [NSString stringWithFormat:@"%li",(long)[whs getHeartRateFromRri]];
@@ -118,25 +118,25 @@ NSString* const ObserverKeyFindDevice = @"foundPeripheral";
 }
 
 - (void)setCellMeasureValue:(UITableViewCell *)cell whs:(WhsSampleService *)whs {
-    NSDictionary *recievedData = [self getLatestRecievedData:whs.recievedDataDictionary];
+    NSDictionary *receivedData = [self getLatestReceivedData:whs.receivedDataDictionary];
     //加速度
-    double x = [[recievedData objectForKey:KeyAccelerationValueX] doubleValue];
-    double y = [[recievedData objectForKey:KeyAccelerationValueY] doubleValue];
-    double z = [[recievedData objectForKey:KeyAccelerationValueZ] doubleValue];
+    double x = [[receivedData objectForKey:KeyAccelerationValueX] doubleValue];
+    double y = [[receivedData objectForKey:KeyAccelerationValueY] doubleValue];
+    double z = [[receivedData objectForKey:KeyAccelerationValueZ] doubleValue];
     [self getCellViewAccelerationXValue:cell].text = [self editAccelerationValue:x];
     [self getCellViewAccelerationYValue:cell].text = [self editAccelerationValue:y];
     [self getCellViewAccelerationZValue:cell].text = [self editAccelerationValue:z];
     //温度
-    double temperature = [[recievedData objectForKey:KeyTemperatureValue] doubleValue];
+    double temperature = [[receivedData objectForKey:KeyTemperatureValue] doubleValue];
     [self getCellViewTemperatureValue:cell].text = [self editRemperature:temperature];
     //RRI
     [self getCellViewPeripheralRRIValue:cell].text
-    = [NSString stringWithFormat:@"%@",[recievedData objectForKey:KeyEcgValue]];
+    = [NSString stringWithFormat:@"%@",[receivedData objectForKey:KeyEcgValue]];
 }
 
-- (NSDictionary *)getLatestRecievedData:(NSArray *)datas {
-    for(NSDictionary *recievedData in [datas reverseObjectEnumerator]){
-        return recievedData;
+- (NSDictionary *)getLatestReceivedData:(NSArray *)datas {
+    for(NSDictionary *receivedData in [datas reverseObjectEnumerator]){
+        return receivedData;
     }
     return nil;
 }
@@ -193,8 +193,8 @@ NSString* const ObserverKeyFindDevice = @"foundPeripheral";
     return (UILabel *)[cell viewWithTag:typeDeviceCellViewPeripheralRRI];
 }
 
-- (UILabel *)getCellViewRecievedDate:(UITableViewCell *)cell {
-    return (UILabel *)[cell viewWithTag:typeDeviceCellViewRecievedDate];
+- (UILabel *)getCellViewReceivedDate:(UITableViewCell *)cell {
+    return (UILabel *)[cell viewWithTag:typeDeviceCellViewReceivedDate];
 }
 
 - (UILabel *)getCellViewHRValue:(UITableViewCell *)cell {
@@ -287,8 +287,8 @@ NSString* const ObserverKeyFindDevice = @"foundPeripheral";
              whs.rssi = service.rssi;
              whs.behaviorType = service.behaviorType;
              whs.accelerationType = service.accelerationType;
-             whs.recievedDataDictionary = service.recievedDataDictionary;
-             whs.recievedDateTime = service.recievedDateTime;
+             whs.receivedDataDictionary = service.receivedDataDictionary;
+             whs.receivedDateTime = service.receivedDateTime;
              *stop = YES;
          }
      }];
@@ -297,7 +297,7 @@ NSString* const ObserverKeyFindDevice = @"foundPeripheral";
 - (void)addBluetoothObserver {
     //計測データ受信の監視
     [self.leManager addObserver:self
-                     forKeyPath:ObserverKeyRecieveData
+                     forKeyPath:ObserverKeyReceiveData
                         options:NSKeyValueObservingOptionNew
                         context:NULL];
     //デバイス発見の監視
@@ -308,7 +308,7 @@ NSString* const ObserverKeyFindDevice = @"foundPeripheral";
 }
 
 - (void)removeBluetoothObserver {
-    [self.leManager removeObserver:self forKeyPath:ObserverKeyRecieveData];
+    [self.leManager removeObserver:self forKeyPath:ObserverKeyReceiveData];
     [self.leManager removeObserver:self forKeyPath:ObserverKeyFindDevice];
 }
 
@@ -316,7 +316,7 @@ NSString* const ObserverKeyFindDevice = @"foundPeripheral";
                       ofObject:(id)object
                         change:(NSDictionary *)change
                        context:(void *)context {
-    if([keyPath isEqualToString:ObserverKeyRecieveData]) {
+    if([keyPath isEqualToString:ObserverKeyReceiveData]) {
         [self updateTableViewData];
     }
     else if([keyPath isEqualToString:ObserverKeyFindDevice]) {

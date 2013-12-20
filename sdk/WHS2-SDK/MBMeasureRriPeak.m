@@ -19,20 +19,20 @@
 
 #pragma mark - constract
 
-- (id)initWithData:(NSData *)recievedData recievedDate:(NSDate *)recievedDate{
+- (id)initWithData:(NSData *)receivedData receivedDate:(NSDate *)receivedDate{
     self = [super init];
     if (self){
-        [recievedData getBytes:&chars length:recievedData.length];
-        self.recievedDate = recievedDate;
+        [receivedData getBytes:&chars length:receivedData.length];
+        self.receivedDate = receivedDate;
     }
     return self;
 }
 
-- (void)setData:(NSData *)recieveData{
-    [recieveData getBytes:&chars length:recieveData.length];
+- (void)setData:(NSData *)receiveData{
+    [receiveData getBytes:&chars length:receiveData.length];
 }
 
-- (NSMutableArray *)getRecieveDatas{
+- (NSMutableArray *)getReceiveDatas{
     NSMutableArray *result = [[NSMutableArray alloc]init];
     [result addObject:@{KeyEcgValue:@([self getEcgValue]),
                         KeyAccelerationValueX:@([self getAccelerationXValue]),
@@ -45,7 +45,7 @@
                         KeyAccelerationValueYMinus:@([self getAccelerationYminusValue]),
                         KeyAccelerationValueZMinus:@([self getAccelerationZminusValue]),
                         KeyTemperatureValue:@([self getTemperatureValue]),
-                        KeyReceivedDate:self.recievedDate}];
+                        KeyReceivedDate:self.receivedDate}];
     return result;
 }
 
@@ -53,14 +53,14 @@
 
 //RRI
 - (double)getEcgValue{
-    return [MBLeConvert convertEcg:chars[typeRriPeakRecieveEcg]
-                           char1:chars[typeRriPeakRecieveEcg+1]];
+    return [MBLeConvert convertEcg:chars[typeRriPeakReceiveEcg]
+                           char1:chars[typeRriPeakReceiveEcg+1]];
 }
 
 //温度
 - (double)getTemperatureValue{
-    return [MBLeConvert convertTemperature:chars[typeRriPeakRecieveTemperature]
-                                   char1:chars[typeRriPeakRecieveTemperature+1]];
+    return [MBLeConvert convertTemperature:chars[typeRriPeakReceiveTemperature]
+                                   char1:chars[typeRriPeakReceiveTemperature+1]];
 }
 
 //加速度x
@@ -86,31 +86,31 @@
 
 //加速度x(plus)
 - (double)getAccelerationXplusValue{
-    return [MBLeConvert convertAcceleration:chars[typeRriPeakRecieveAccelerationX]];
+    return [MBLeConvert convertAcceleration:chars[typeRriPeakReceiveAccelerationX]];
 }
 
 //加速度y(plus)
 - (double)getAccelerationYplusValue{
-    return [MBLeConvert convertAcceleration:chars[typeRriPeakRecieveAccelerationY]];
+    return [MBLeConvert convertAcceleration:chars[typeRriPeakReceiveAccelerationY]];
 }
 
 //加速度z(plus)
 - (double)getAccelerationZplusValue{
-    return [MBLeConvert convertAcceleration:chars[typeRriPeakRecieveAccelerationZ]];
+    return [MBLeConvert convertAcceleration:chars[typeRriPeakReceiveAccelerationZ]];
 }
 
 //加速度x(minus)
 - (double)getAccelerationXminusValue{
-    return [MBLeConvert convertAcceleration:chars[typeRriPeakRecieveAccelerationMinusX]];
+    return [MBLeConvert convertAcceleration:chars[typeRriPeakReceiveAccelerationMinusX]];
 }
 
 //加速度y(minus)
 - (double)getAccelerationYminusValue{
-    return [MBLeConvert convertAcceleration:chars[typeRriPeakRecieveAccelerationMinusY]];
+    return [MBLeConvert convertAcceleration:chars[typeRriPeakReceiveAccelerationMinusY]];
 }
 
 //加速度z(minus)
 - (double)getAccelerationZminusValue{
-    return [MBLeConvert convertAcceleration:chars[typeRriPeakRecieveAccelerationMinusZ]];
+    return [MBLeConvert convertAcceleration:chars[typeRriPeakReceiveAccelerationMinusZ]];
 }
 @end

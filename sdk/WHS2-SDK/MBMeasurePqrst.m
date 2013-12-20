@@ -21,33 +21,33 @@ const double pqrstInterval = 0.025;
 
 #pragma mark - constract
 
-- (id)initWithData:(NSData *)receivedData recievedDate:(NSDate *)recievedDate{
+- (id)initWithData:(NSData *)receivedData receivedDate:(NSDate *)receivedDate{
     self = [super init];
     if (self){
         [receivedData getBytes:&chars length:receivedData.length];
-        self.recievedDate = recievedDate;
+        self.receivedDate = receivedDate;
     }
     return self;
 }
 
-- (void)setData:(NSData *)recieveData{
-    [recieveData getBytes:&chars length:recieveData.length];
+- (void)setData:(NSData *)receiveData{
+    [receiveData getBytes:&chars length:receiveData.length];
 }
 
-- (NSMutableArray *)getRecieveDatas{
+- (NSMutableArray *)getReceiveDatas{
     NSMutableArray *result = [[NSMutableArray alloc]init];
     [result addObject:@{KeyEcgValue:@([self getEcgValue]),
                         KeyAccelerationValueX:@([self getAccelerationXValue]),
                         KeyAccelerationValueY:@([self getAccelerationYValue]),
                         KeyAccelerationValueZ:@([self getAccelerationZValue]),
                         KeyTemperatureValue:@([self getTemperatureValue]),
-                        KeyReceivedDate:[self.recievedDate dateByAddingTimeInterval:-1 * pqrstInterval]}];
+                        KeyReceivedDate:[self.receivedDate dateByAddingTimeInterval:-1 * pqrstInterval]}];
     [result addObject:@{KeyEcgValue:@([self getEcg2Value]),
                         KeyAccelerationValueX:@([self getAccelerationX2Value]),
                         KeyAccelerationValueY:@([self getAccelerationY2Value]),
                         KeyAccelerationValueZ:@([self getAccelerationZ2Value]),
                         KeyTemperatureValue:@([self getTemperatureValue]),
-                        KeyReceivedDate:self.recievedDate}];
+                        KeyReceivedDate:self.receivedDate}];
     return result;
 }
 

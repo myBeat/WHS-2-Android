@@ -19,7 +19,7 @@ typedef NS_ENUM(NSInteger, DeviceCellView){
     typeDeviceCellViewAccelerationX = 6,
     typeDeviceCellViewAccelerationY = 7,
     typeDeviceCellViewAccelerationZ = 8,
-    typeDeviceCellViewRecievedDate = 9,
+    typeDeviceCellViewReceivedDate = 9,
     typeDeviceCellViewUuid = 10,
     typeDeviceCellViewImageHeart = 11,
     typeDeviceCellViewAccelerationXLabel = 12,

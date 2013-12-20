@@ -12,10 +12,10 @@
 
 @required
 
-@property (nonatomic) NSDate *recievedDate;
+@property (nonatomic) NSDate *receivedDate;
 
-- (id)initWithData:(NSData *)receivedData recievedDate:(NSDate *)recievedDate;
+- (id)initWithData:(NSData *)receivedData receivedDate:(NSDate *)receivedDate;
 
-- (NSMutableArray *)getRecieveDatas;
+- (NSMutableArray *)getReceiveDatas;
 
 @end

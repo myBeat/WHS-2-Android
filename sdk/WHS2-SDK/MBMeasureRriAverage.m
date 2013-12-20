@@ -19,27 +19,27 @@
 
 #pragma mark - constract
 
-- (id)initWithData:(NSData *)recievedData recievedDate:(NSDate *)recievedDate{
+- (id)initWithData:(NSData *)receivedData receivedDate:(NSDate *)receivedDate{
     self = [super init];
     if (self){
-        [recievedData getBytes:&chars length:recievedData.length];
-        self.recievedDate = recievedDate;
+        [receivedData getBytes:&chars length:receivedData.length];
+        self.receivedDate = receivedDate;
     }
     return self;
 }
 
-- (void)setData:(NSData *)recieveData{
-    [recieveData getBytes:&chars length:recieveData.length];
+- (void)setData:(NSData *)receiveData{
+    [receiveData getBytes:&chars length:receiveData.length];
 }
 
-- (NSMutableArray *)getRecieveDatas{
+- (NSMutableArray *)getReceiveDatas{
     NSMutableArray *result = [[NSMutableArray alloc]init];
     [result addObject:@{KeyEcgValue:@([self getEcgValue]),
                         KeyAccelerationValueX:@([self getAccelerationXValue]),
                         KeyAccelerationValueY:@([self getAccelerationYValue]),
                         KeyAccelerationValueZ:@([self getAccelerationZValue]),
                         KeyTemperatureValue:@([self getTemperatureValue]),
-                        KeyReceivedDate:self.recievedDate}];
+                        KeyReceivedDate:self.receivedDate}];
     return result;
 }
 
