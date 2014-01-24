@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" 
+            android:text="@string/label_device_address" />
+        <TextView
+            android:id="@+id/device_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" 
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" 
+            android:text="@string/label_state" />
+        <TextView
+            android:id="@+id/connection_state"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" 
+            android:text="@string/disconnected" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/label_pqrst" />
+        <TextView
+            android:id="@+id/pqrst"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal" >
+	    <TextView
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content" 
+	        android:layout_weight="1" 
+	        android:text="@string/label_rri" />
+	    <TextView
+	        android:id="@+id/rri"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content" 
+	        android:layout_weight="1" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal" >
+	    <TextView
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content" 
+	        android:layout_weight="3" 
+	        android:text="@string/label_acceleration" />
+        <TextView
+            android:id="@+id/acceleration_x"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" 
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/acceleration_y"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" 
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/acceleration_z"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" 
+            android:layout_weight="1" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal" >
+	    <TextView
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content" 
+	        android:layout_weight="1" 
+	        android:text="@string/label_temperature" />
+        <TextView
+            android:id="@+id/temperature"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+     </LinearLayout>
+  
+    <Button
+        android:id="@+id/button_setting_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/setting" />
+
+</LinearLayout>
