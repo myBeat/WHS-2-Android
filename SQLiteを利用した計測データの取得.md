@@ -6,7 +6,6 @@
 ### 1. Sqlite3をインストールする
 
 ### 2. iTunesを利用してMeasure.sqliteを取得する
-![操作画面](https://github.com/masaakiwada/Notes/blob/master/iTunes.png)
 
 ### 3. Sqlite3で接続する
 >Sqlite3 Measure.sql
