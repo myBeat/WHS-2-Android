@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		821236DE18C6A69000EF3A0C /* MBLeConvertTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 821236DD18C6A69000EF3A0C /* MBLeConvertTest.m */; };
 		825C1F16185562B5001D514B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825C1F15185562B5001D514B /* Foundation.framework */; };
 		825C1F18185562B5001D514B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825C1F17185562B5001D514B /* CoreGraphics.framework */; };
 		825C1F1A185562B5001D514B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825C1F19185562B5001D514B /* UIKit.framework */; };
@@ -20,7 +21,6 @@
 		825C1F36185562B5001D514B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825C1F15185562B5001D514B /* Foundation.framework */; };
 		825C1F37185562B5001D514B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825C1F19185562B5001D514B /* UIKit.framework */; };
 		825C1F3F185562B5001D514B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 825C1F3D185562B5001D514B /* InfoPlist.strings */; };
-		825C1F41185562B5001D514B /* Whs2SampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 825C1F40185562B5001D514B /* Whs2SampleTests.m */; };
 		825C1F4D18556347001D514B /* SettingMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 825C1F4C18556347001D514B /* SettingMasterViewController.m */; };
 		825C1F501855635B001D514B /* SettingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 825C1F4F1855635B001D514B /* SettingDetailViewController.m */; };
 		825C1F5318556374001D514B /* SystemSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 825C1F5218556374001D514B /* SystemSettings.m */; };
@@ -55,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		821236DD18C6A69000EF3A0C /* MBLeConvertTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBLeConvertTest.m; sourceTree = "<group>"; };
 		825C1F12185562B5001D514B /* Whs2Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whs2Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		825C1F15185562B5001D514B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		825C1F17185562B5001D514B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -73,7 +74,6 @@
 		825C1F34185562B5001D514B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		825C1F3C185562B5001D514B /* Whs2SampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Whs2SampleTests-Info.plist"; sourceTree = "<group>"; };
 		825C1F3E185562B5001D514B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		825C1F40185562B5001D514B /* Whs2SampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Whs2SampleTests.m; sourceTree = "<group>"; };
 		825C1F4B18556347001D514B /* SettingMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingMasterViewController.h; sourceTree = "<group>"; };
 		825C1F4C18556347001D514B /* SettingMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingMasterViewController.m; sourceTree = "<group>"; };
 		825C1F4E1855635B001D514B /* SettingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingDetailViewController.h; sourceTree = "<group>"; };
@@ -184,8 +184,8 @@
 		825C1F3A185562B5001D514B /* Whs2SampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				825C1F40185562B5001D514B /* Whs2SampleTests.m */,
 				825C1F3B185562B5001D514B /* Supporting Files */,
+				821236DD18C6A69000EF3A0C /* MBLeConvertTest.m */,
 			);
 			path = Whs2SampleTests;
 			sourceTree = "<group>";
@@ -350,7 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				825C1F41185562B5001D514B /* Whs2SampleTests.m in Sources */,
+				821236DE18C6A69000EF3A0C /* MBLeConvertTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +467,7 @@
 		825C1F45185562B5001D514B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -485,6 +486,7 @@
 		825C1F46185562B5001D514B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -503,7 +505,7 @@
 		825C1F48185562B5001D514B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Whs2Sample.app/Whs2Sample";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -516,6 +518,11 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../../sdk/WHS2-SDK",
+				);
 				INFOPLIST_FILE = "Whs2SampleTests/Whs2SampleTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -526,7 +533,7 @@
 		825C1F49185562B5001D514B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Whs2Sample.app/Whs2Sample";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -535,6 +542,11 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Whs2Sample/Whs2Sample-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../../sdk/WHS2-SDK",
+				);
 				INFOPLIST_FILE = "Whs2SampleTests/Whs2SampleTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";

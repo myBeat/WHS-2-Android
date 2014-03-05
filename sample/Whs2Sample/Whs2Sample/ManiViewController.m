@@ -15,7 +15,8 @@
 NSString* const ObserverKeyReceiveData = @"receivedData";
 NSString* const ObserverKeyFindDevice = @"foundPeripheral";
 
-@interface ManiViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface ManiViewController()
+
 @property (nonatomic) NSMutableArray *peripheralLists;
 @property (nonatomic) NSTimer *stopScanTimer;
 @end
