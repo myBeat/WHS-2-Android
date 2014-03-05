@@ -30,6 +30,20 @@
     return byte>>4 & 0x01;
 }
 
+//電圧を読み込む(1100 0000)
+//11:電池残量100% 10:電池残量75% 01:電池残量50% 00:電池残量25%
++ (NSInteger)convertVoltageLevel:(unsigned char)byte{
+    int bit8 = byte >> 7 & 0x01;
+    int bit7 = byte >> 6 & 0x01;
+    if (bit8 == 0) {
+        // 01 or 00
+        return (bit7 == 0) ? 0 : 1;
+    } else {
+        // 11 or 10
+        return (bit7 == 0) ? 2 : 3;
+    }
+}
+
 + (double)convertEcg:(unsigned char)byte0 char1:(unsigned char)byte1{
     double result = (byte0 << 8) + byte1;
     return result;
