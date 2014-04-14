@@ -3,14 +3,16 @@
 直接、SQLite3を操作することでデータを取得できます。
 
 
-### 1. Sqlite3をインストールする
+### 1. PCまたはMacにSqlite3をインストールする
 
-### 2. iTunesを利用してMeasure.sqliteを取得する
+### 2. PCまたはMacにiOS機器を接続する
 
-### 3. Sqlite3で接続する
->Sqlite3 Measure.sql
+### 3. PCまたはMacのiTunesを利用してMeasure.sqliteファイルを取得する
 
-### 4. 計測のID（ZMEASURE_ID）を取得する
+### 4. Sqlite3で接続する
+>sqlite3 Measure.sqlite
+
+### 5. 計測のID（ZMEASURE_ID）を取得する
 
 ```
 > select ZMEASURE_ID, time(ZMEASURE_DT_START), time(ZMEASURE_DT_END) from zmeasure
