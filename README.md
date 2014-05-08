@@ -3,7 +3,7 @@ WHS-2-Android
 
 
 Android での動作確認用のアプリをGoogle Playに公開しました  
-Android OS4.4の機器にインストールできます。
+Android 4.3以降のBluetooth4.0対応機種にインストールできます。
 
 ![myBeat](http://em.uniontool.co.jp/sensor/android/ic_launcher.png)
 
