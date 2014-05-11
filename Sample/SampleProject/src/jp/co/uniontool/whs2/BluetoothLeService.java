@@ -105,11 +105,11 @@ public class BluetoothLeService extends Service {
 		final byte[] data = characteristic.getValue();
 		if (!ReceiveUtility.checkMeasureMode(data)) {
 			//設定モード
-			recieveSetting(ACTION_DATA_AVAILABLE_SETTING, data);
+			receiveSetting(ACTION_DATA_AVAILABLE_SETTING, data);
 			return;
 		}
 		//計測モード
-		recieveMeasure(ACTION_DATA_AVAILABLE_MEASURE, data);
+		receiveMeasure(ACTION_DATA_AVAILABLE_MEASURE, data);
 	}
 	
 	/**
@@ -117,7 +117,7 @@ public class BluetoothLeService extends Service {
 	 * @param action　ACTION_DATA_AVAILABLE_SETTING
 	 * @param data WHS-2より受信したデータ
 	 */
-	private void recieveSetting(final String action, final byte[] data) {
+	private void receiveSetting(final String action, final byte[] data) {
 		final Intent intent = new Intent(action);
 		
     	final String commandString = new String(data);
@@ -145,13 +145,13 @@ public class BluetoothLeService extends Service {
 	 * @param action　ACTION_DATA_AVAILABLE_MEASURE
 	 * @param data WHS-2より受信したデータ
 	 */
-    private void recieveMeasure(final String action, final byte[] data) {
+    private void receiveMeasure(final String action, final byte[] data) {
 		final Intent intent = new Intent(action);
 		
-		MeasureReceiver reciever = ReceiveUtility.getMeasureObject(data);
-        if (reciever != null) {
-            SerializableReceivedData receivedData = reciever.getReceivedData();
-            receivedData.setRecievedDate(System.currentTimeMillis());
+		MeasureReceiver receiver = ReceiveUtility.getMeasureObject(data);
+        if (receiver != null) {
+            SerializableReceivedData receivedData = receiver.getReceivedData();
+            receivedData.setReceivedDate(System.currentTimeMillis());
             intent.putExtra(WhsHelper.INTENT_RECEIVED_OBJ, receivedData);   
         }
         sendBroadcast(intent);
@@ -283,7 +283,7 @@ public class BluetoothLeService extends Service {
 				return;
 			}
 			
-			wrireWhsPeripheral(getSupportedGattServices());
+			writeWhsPeripheral(getSupportedGattServices());
 			mHandler.postDelayed(this, 1000);
 		}
 	};
@@ -315,7 +315,7 @@ public class BluetoothLeService extends Service {
 	 * CharacteristicのUUIDが同じ、Notify用のものがあるので注意
 	 * @param gattServices
 	 */
-	private void wrireWhsPeripheral(List<BluetoothGattService> gattServices) {
+	private void writeWhsPeripheral(List<BluetoothGattService> gattServices) {
 		if (gattServices == null) return;
 
 		for (BluetoothGattService gattService : gattServices) {

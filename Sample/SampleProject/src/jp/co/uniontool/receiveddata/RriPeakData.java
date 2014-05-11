@@ -4,7 +4,7 @@ public class RriPeakData implements SerializableReceivedData {
 
 	private static final long serialVersionUID = 1L;
 	private int rri;
-	private long recievedMillis;
+	private long receivedMillis;
     private double temperature;
     private double accelerationXPlus;
     private double accelerationYPlus;
@@ -21,12 +21,12 @@ public class RriPeakData implements SerializableReceivedData {
     	return getRri();
     }
     
-    public long getRecievedDate(){
-    	return recievedMillis;
+    public long getReceivedDate(){
+    	return receivedMillis;
     }
     
-    public void setRecievedDate(long date){
-    	recievedMillis = date;
+    public void setReceivedDate(long date){
+    	receivedMillis = date;
     }
     
     public void setRri(int rri){
