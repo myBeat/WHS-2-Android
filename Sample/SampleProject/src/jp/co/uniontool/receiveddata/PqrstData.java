@@ -4,7 +4,7 @@ package jp.co.uniontool.receiveddata;
 public class PqrstData implements SerializableReceivedData {
 
 	private static final long serialVersionUID = 1L;
-	private long recievedMillis;
+	private long receivedMillis;
 	private int pqrst1;
     private double accelerationX1;
     private double accelerationY1;
@@ -18,12 +18,12 @@ public class PqrstData implements SerializableReceivedData {
     public PqrstData(){
     }
     
-    public long getRecievedDate(){
-    	return recievedMillis;
+    public long getReceivedDate(){
+    	return receivedMillis;
     }
     
-    public void setRecievedDate(long date){
-    	recievedMillis = date;
+    public void setReceivedDate(long date){
+    	receivedMillis = date;
     }
 
     public int getEcg(){

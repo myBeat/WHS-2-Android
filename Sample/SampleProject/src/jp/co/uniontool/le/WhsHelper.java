@@ -25,7 +25,7 @@ public class WhsHelper {
 	 */
 	public static final String INTENT_DATETIME = "jp.co.uniontool.INTENT_DATETIME";
 	public static final String INTENT_HEART_RATE = "jp.co.uniontool.INTENT_HEART_RATE";
-	public static final String INTENT_RECEIVED_OBJ = "jp.co.uniontool.INTENT_RECIEVED_OBJ";
+	public static final String INTENT_RECEIVED_OBJ = "jp.co.uniontool.INTENT_RECEIVED_OBJ";
 	public static final String INTENT_ADDRESS = "jp.co.uniontool.INTENT_ADDRESS";
 	public static final String INTENT_MODE = "jp.co.uniontool.INTENT_MODE";
 	public static final String INTENT_COMMAND = "jp.co.uniontool.INTENT_COMMAND";
