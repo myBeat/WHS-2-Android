@@ -15,6 +15,7 @@
 -(id)init {
     self = [super init];
     if(self) {
+        self.isSupport = YES;
         self.centralManager = [[CBCentralManager alloc]initWithDelegate:self queue:nil];
         self.whsServiceUUID = [CBUUID UUIDWithString:ServiceWhsUuid];
         self.whsCharacteristicsUUID = [CBUUID UUIDWithString:CharacteristicsWhsUuid];
