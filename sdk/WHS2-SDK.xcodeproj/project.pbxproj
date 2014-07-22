@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		82360D2717A9FED0009D7348 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82360D2617A9FED0009D7348 /* Foundation.framework */; };
-		82360D3617A9FED0009D7348 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82360D3517A9FED0009D7348 /* SenTestingKit.framework */; };
 		82360D3817A9FED0009D7348 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82360D3717A9FED0009D7348 /* UIKit.framework */; };
 		82360D3917A9FED0009D7348 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82360D2617A9FED0009D7348 /* Foundation.framework */; };
 		82360D3C17A9FED0009D7348 /* libWHS2-SDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82360D2317A9FED0009D7348 /* libWHS2-SDK.a */; };
@@ -61,8 +60,7 @@
 		82360D2317A9FED0009D7348 /* libWHS2-SDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libWHS2-SDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82360D2617A9FED0009D7348 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		82360D2A17A9FED0009D7348 /* WHS2-SDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WHS2-SDK-Prefix.pch"; sourceTree = "<group>"; };
-		82360D3417A9FED0009D7348 /* WHS2-SDKTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WHS2-SDKTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		82360D3517A9FED0009D7348 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		82360D3417A9FED0009D7348 /* WHS2-SDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WHS2-SDKTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82360D3717A9FED0009D7348 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		82360D3F17A9FED0009D7348 /* WHS2-SDKTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WHS2-SDKTests-Info.plist"; sourceTree = "<group>"; };
 		82360D4117A9FED0009D7348 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82360D3617A9FED0009D7348 /* SenTestingKit.framework in Frameworks */,
 				82360D3817A9FED0009D7348 /* UIKit.framework in Frameworks */,
 				82360D3917A9FED0009D7348 /* Foundation.framework in Frameworks */,
 				82360D3C17A9FED0009D7348 /* libWHS2-SDK.a in Frameworks */,
@@ -129,7 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				82360D2317A9FED0009D7348 /* libWHS2-SDK.a */,
-				82360D3417A9FED0009D7348 /* WHS2-SDKTests.octest */,
+				82360D3417A9FED0009D7348 /* WHS2-SDKTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,7 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				82360D2617A9FED0009D7348 /* Foundation.framework */,
-				82360D3517A9FED0009D7348 /* SenTestingKit.framework */,
 				82360D3717A9FED0009D7348 /* UIKit.framework */,
 			);
 			name = Frameworks;
@@ -250,8 +246,8 @@
 			);
 			name = "WHS2-SDKTests";
 			productName = "WHS2-SDKTests";
-			productReference = 82360D3417A9FED0009D7348 /* WHS2-SDKTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = 82360D3417A9FED0009D7348 /* WHS2-SDKTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -259,6 +255,7 @@
 		82360D1B17A9FED0009D7348 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastTestingUpgradeCheck = 0510;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "UNION TOOL";
 			};
@@ -446,12 +443,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WHS2-SDK/WHS2-SDK-Prefix.pch";
 				INFOPLIST_FILE = "WHS2-SDKTests/WHS2-SDKTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -461,12 +458,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WHS2-SDK/WHS2-SDK-Prefix.pch";
 				INFOPLIST_FILE = "WHS2-SDKTests/WHS2-SDKTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};

@@ -23,6 +23,7 @@
 
 - (id)init;
 - (void)startScan;
+- (void)startScanWithInterval:(NSTimeInterval)interval;
 - (void)stopScan;
 - (void)connectPeripheral:(CBPeripheral *)peripheral;
 - (void)disconnectPeripheral:(CBPeripheral*)peripheral;
