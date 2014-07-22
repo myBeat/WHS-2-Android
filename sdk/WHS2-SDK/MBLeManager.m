@@ -28,13 +28,18 @@
 #pragma mark -
 #pragma mark Discovery
 -(void)startScan {
+    // Default 60
+    [self startScanWithInterval:60];
+}
+
+-(void)startScanWithInterval:(NSTimeInterval)interval {
     if(!self.isBTPoweredOn) return;
-    
+
     NSArray *scanServices = [NSArray arrayWithObjects:self.whsServiceUUID,nil];
     NSDictionary *scanOptions = [self getScanningOption];
 
     [self.centralManager scanForPeripheralsWithServices:scanServices options:scanOptions];
-    _scanStopTimer = [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(stopScan) userInfo:nil repeats:NO];
+    _scanStopTimer = [NSTimer scheduledTimerWithTimeInterval:interval target:self selector:@selector(stopScan) userInfo:nil repeats:NO];
 }
 
 - (NSDictionary *)getScanningOption{
