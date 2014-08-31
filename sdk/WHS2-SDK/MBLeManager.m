@@ -2,6 +2,14 @@
 #import "MBWhsService.h"
 #import "MeasureReceiveProtocol.h"
 
+NSString* const KeyNotificationDidUpdateState = @"myBeatDidUpdateState";
+NSString* const KeyNotificationFailToConnectPeripheral = @"myBeatDidFailToConnectPeripheral";
+NSString* const KeyNotificationDidConnectPeripheral = @"myBeatDidConnectPeripheral";
+NSString* const KeyNotificationDidDisconnectPeripheral = @"myBeatDidDisconnectPeripheral";
+
+NSString* const KeyNotificationUserInfoState = @"state";
+NSString* const KeyNotificationUserInfoPeripheral = @"peripheral";
+
 @interface MBLeManager() <CBCentralManagerDelegate, CBPeripheralDelegate>
 @property (nonatomic) NSTimer *scanStopTimer;
 @property (nonatomic) BOOL isBTPoweredOn;
@@ -103,6 +111,8 @@
             self.isSupport = NO;
             break;
     }
+    [[NSNotificationCenter defaultCenter] postNotificationName:KeyNotificationDidUpdateState object:nil
+                                                      userInfo:@{KeyNotificationUserInfoState: [NSNumber numberWithInt:((int)[self.centralManager state])] }];
 }
 
 - (CBUUID *)getCBUUIDfromUuidString:(NSString *)uuidString {
@@ -114,15 +124,18 @@
 }
 
 - (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error {
+    [[NSNotificationCenter defaultCenter] postNotificationName:KeyNotificationFailToConnectPeripheral object:nil userInfo:@{KeyNotificationUserInfoPeripheral: peripheral }];
 }
 
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral {
     peripheral.delegate = self;
     [peripheral discoverServices:[NSArray arrayWithObjects:self.whsServiceUUID,nil]];
+    [[NSNotificationCenter defaultCenter] postNotificationName:KeyNotificationDidConnectPeripheral object:nil userInfo:@{KeyNotificationUserInfoPeripheral: peripheral }];
 }
 
 - (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error {
     [self clearPeripheral:peripheral];
+    [[NSNotificationCenter defaultCenter] postNotificationName:KeyNotificationDidDisconnectPeripheral object:nil userInfo:@{KeyNotificationUserInfoPeripheral: peripheral }];
 }
 
 - (void)clearPeripheral:(CBPeripheral *)peripheral{

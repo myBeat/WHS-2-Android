@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "82360D3317A9FED0009D7348"
-               BuildableName = "WHS2-SDKTests.octest"
+               BuildableName = "WHS2-SDKTests.xctest"
                BlueprintName = "WHS2-SDKTests"
                ReferencedContainer = "container:WHS2-SDK.xcodeproj">
             </BuildableReference>
@@ -49,6 +49,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "82360D2217A9FED0009D7348"
+            BuildableName = "libWHS2-SDK.a"
+            BlueprintName = "WHS2-SDK"
+            ReferencedContainer = "container:WHS2-SDK.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
