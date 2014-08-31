@@ -103,6 +103,8 @@
             self.isSupport = NO;
             break;
     }
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"MyBeatDidUpdateState" object:nil
+                                                      userInfo:@{ @"state": [NSNumber numberWithInt:((int)[self.centralManager state])] }];
 }
 
 - (CBUUID *)getCBUUIDfromUuidString:(NSString *)uuidString {
@@ -114,15 +116,18 @@
 }
 
 - (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"MyBeatDidFailToConnectPeripheral" object:nil userInfo:@{ @"peripheral": peripheral }];
 }
 
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral {
     peripheral.delegate = self;
     [peripheral discoverServices:[NSArray arrayWithObjects:self.whsServiceUUID,nil]];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"MyBeatDidConnectPeripheral" object:nil userInfo:@{ @"peripheral": peripheral }];
 }
 
 - (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error {
     [self clearPeripheral:peripheral];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"MyBeatDidDisconnectPeripheral" object:nil userInfo:@{ @"peripheral": peripheral }];
 }
 
 - (void)clearPeripheral:(CBPeripheral *)peripheral{
