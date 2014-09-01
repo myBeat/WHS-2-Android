@@ -306,11 +306,78 @@ NSString* const ObserverKeyFindDevice = @"foundPeripheral";
                      forKeyPath:ObserverKeyFindDevice
                         options:NSKeyValueObservingOptionNew
                         context:NULL];
+    
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveLeNotification:)
+                                                 name:KeyNotificationDidUpdateState
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveLeNotification:)
+                                                 name:KeyNotificationFailToConnectPeripheral
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveLeNotification:)
+                                                 name:KeyNotificationDidConnectPeripheral
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveLeNotification:)
+                                                 name:KeyNotificationDidDisconnectPeripheral
+                                               object:nil];
+
+}
+
+- (void)receiveLeNotification:(NSNotification *)notification {
+    NSDictionary *userInfo = notification.userInfo;
+    if ([[notification name] isEqualToString:KeyNotificationDidUpdateState]){
+        CBCentralManagerState state = (CBCentralManagerState)[userInfo objectForKey:KeyNotificationUserInfoState];
+        switch (state) {
+            case CBCentralManagerStatePoweredOff:
+                NSLog(@"CBCentralManagerStatePoweredOff");
+                break;
+            case CBCentralManagerStatePoweredOn:
+                NSLog(@"CBCentralManagerStatePoweredOn");
+                break;
+            case CBCentralManagerStateResetting:
+                NSLog(@"CBCentralManagerStateResetting");
+                break;
+            case CBCentralManagerStateUnauthorized:
+                NSLog(@"CBCentralManagerStateUnauthorized");
+                break;
+            case CBCentralManagerStateUnknown:
+                NSLog(@"CBCentralManagerStateUnknown");
+                break;
+            case CBCentralManagerStateUnsupported:
+                NSLog(@"CBCentralManagerStateUnsupported");
+                break;
+            default:
+                break;
+        }
+         NSLog(@"DidUpdateState");
+        
+    } else if ([[notification name] isEqualToString:KeyNotificationFailToConnectPeripheral]){
+        CBPeripheral *peripheral = [userInfo objectForKey:KeyNotificationUserInfoPeripheral];
+        NSLog(@"FailToConnectPeripheral:%@", peripheral);
+
+    } else if ([[notification name] isEqualToString:KeyNotificationDidConnectPeripheral]){
+        CBPeripheral *peripheral = [userInfo objectForKey:KeyNotificationUserInfoPeripheral];
+        NSLog(@"DidConnectPeripheral:%@", peripheral);
+        
+    } else if ([[notification name] isEqualToString:KeyNotificationDidDisconnectPeripheral]){
+        CBPeripheral *peripheral = [userInfo objectForKey:KeyNotificationUserInfoPeripheral];
+        NSLog(@"DidDisconnectPeripheral:%@", peripheral);
+
+    }
 }
 
 - (void)removeBluetoothObserver {
     [self.leManager removeObserver:self forKeyPath:ObserverKeyReceiveData];
     [self.leManager removeObserver:self forKeyPath:ObserverKeyFindDevice];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:KeyNotificationDidUpdateState object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:KeyNotificationFailToConnectPeripheral object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:KeyNotificationDidConnectPeripheral object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:KeyNotificationDidDisconnectPeripheral object:nil];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
