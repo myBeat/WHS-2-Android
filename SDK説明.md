@@ -21,7 +21,7 @@ ViewController.h
 @class MBLeManager;
 
 @interface ViewController : UITableViewController
-@property (weak, nonatomic) MBLeManager *leManager;
+@property (nonatomic) MBLeManager *leManager;
 
 @end
 ```
@@ -35,19 +35,35 @@ NSString* const ObserverKeyFindDevice = @"foundPeripheral";
 
 @implementation ViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+}
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     _leManager = [[MBLeManager alloc]init];
     
-    //デバイスのスキャンを開始
-    [_leManager startScan];
-    
     [self addBluetoothObserver];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [self.leManager removeObserver:self forKeyPath:ObserverKeyFindDevice];
+}
+
+//デバイスのスキャンを開始
+- (IBAction)touchScanButton:(id)sender
+{
+    [_leManager startScan];
+}
+
 //デバイス発見の監視
-- (void)addBluetoothObserver {
+- (void)addBluetoothObserver
+{
     [self.leManager addObserver:self
                      forKeyPath:ObserverKeyFindDevice
                         options:NSKeyValueObservingOptionNew
@@ -58,9 +74,9 @@ NSString* const ObserverKeyFindDevice = @"foundPeripheral";
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
                         change:(NSDictionary *)change
-                       context:(void *)context {
+                       context:(void *)context
+{
     if([keyPath isEqualToString:ObserverKeyFindDevice]) {
-       ・・・・
     }
 }
 ```
