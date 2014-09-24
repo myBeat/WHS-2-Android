@@ -4,6 +4,7 @@
 
 NSString* const KeyNotificationDidUpdateState = @"myBeatDidUpdateState";
 NSString* const KeyNotificationFailToConnectPeripheral = @"myBeatDidFailToConnectPeripheral";
+NSString* const KeyNotificationDiscoverPeripheral = @"myBeatDiscoverPeripheral";
 NSString* const KeyNotificationDidConnectPeripheral = @"myBeatDidConnectPeripheral";
 NSString* const KeyNotificationDidDisconnectPeripheral = @"myBeatDidDisconnectPeripheral";
 
@@ -67,6 +68,8 @@ NSString* const KeyNotificationUserInfoPeripheral = @"peripheral";
         self.foundPeripheral = peripheral;
 		[self.foundPeripherals addObject:peripheral];
     }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:KeyNotificationDiscoverPeripheral object:nil userInfo:@{KeyNotificationUserInfoPeripheral: peripheral }];
 }
 
 #pragma mark -
