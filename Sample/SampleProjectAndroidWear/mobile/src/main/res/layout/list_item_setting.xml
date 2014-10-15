@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:baselineAligned="false"
+    android:padding="8dp" >
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="8dp" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <TextView android:id="@+id/setting_item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:textSize="25sp"/>
+            <TextView android:id="@+id/setting_item_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:textSize="25sp"/>
+        </LinearLayout>
+        <TextView android:id="@+id/setting_item_remarks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#383838"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        android:layout_weight="1"
+        android:padding="8dp" >
+        <TextView android:id="@+id/setting_item_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|right"
+            android:text="@string/unknown"
+            android:visibility="invisible"
+            android:textSize="20sp"/>
+        <TextView android:id="@+id/setting_item_value_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|right"
+            android:text=""
+            android:textSize="20sp"/>
+    </LinearLayout>
+</LinearLayout>
