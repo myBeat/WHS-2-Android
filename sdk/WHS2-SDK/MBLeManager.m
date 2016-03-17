@@ -75,13 +75,15 @@ NSString* const KeyNotificationUserInfoPeripheral = @"peripheral";
 #pragma mark -
 #pragma mark Connection/Disconnection
 - (void)connectPeripheral:(CBPeripheral *)peripheral{
-    if (![peripheral isConnected])
-        [self.centralManager connectPeripheral:peripheral options:nil];
+    if (peripheral.state == CBPeripheralStateConnected)
+        return;
+    
+    [self.centralManager connectPeripheral:peripheral options:nil];
 }
 
 - (void)disconnect{
     for (MBWhsService *whs in self.connectedPeripherals){
-        if ([whs.peripheral isConnected]){
+        if (whs.peripheral.state == CBPeripheralStateConnected){
             [self disconnectPeripheral:whs.peripheral];
         }
     }
