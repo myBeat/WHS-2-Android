@@ -36,7 +36,7 @@ NSString* const KeyReceivedDate = @"ReceivedDate";
         _peripheral = peripheral;
         _name = peripheral.name;
         _rssi = [peripheral.RSSI integerValue];
-        _uuid = (peripheral.UUID==nil)?@"":[peripheral identifier].UUIDString;
+        _uuid = (peripheral.identifier==nil)?@"":[peripheral identifier].UUIDString;
 	}
     return self;
 }
