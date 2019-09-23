@@ -2,7 +2,9 @@ package jp.co.uniontool.whs2;
 
 import java.util.ArrayList;
 
+import android.Manifest;
 import android.app.Activity;
+import android.app.DialogFragment;
 import android.app.ListActivity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -29,6 +31,8 @@ public class DeviceListActivity extends ListActivity {
 
     private static final int REQUEST_ENABLE_BT = 1;
     private static final long SCAN_PERIOD = 5000;
+    public static final int REQUEST_ENABLE_BLUETOOTH = 1;
+    public static final int REQUEST_ENABLE_LOCATION = 2;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,18 @@ public class DeviceListActivity extends ListActivity {
 
         if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)) {
             finish();
+        }
+
+        if (checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                && checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_ENABLE_LOCATION);
+        }
+
+        // Bluetooth機能がOFFだった場合
+        BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        if (bluetoothAdapter != null && !bluetoothAdapter.isEnabled()) {
+            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            startActivityForResult(enableBtIntent, REQUEST_ENABLE_BLUETOOTH);
         }
 
         final BluetoothManager bluetoothManager =
