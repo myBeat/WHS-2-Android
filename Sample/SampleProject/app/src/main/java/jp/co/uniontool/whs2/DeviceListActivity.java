@@ -1,6 +1,8 @@
 package jp.co.uniontool.whs2;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
 
 import android.Manifest;
 import android.app.Activity;
@@ -9,6 +11,7 @@ import android.app.ListActivity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothManager;
+import android.bluetooth.le.ScanFilter;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -23,12 +26,16 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import jp.co.uniontool.le.WhsCommandContainer;
+import jp.co.uniontool.le.WhsGattAttributes;
+
 public class DeviceListActivity extends ListActivity {
     private LeDeviceListAdapter mLeDeviceListAdapter;
     private BluetoothAdapter mBluetoothAdapter;
     private boolean mScanning;
     private Handler mHandler;
 
+    private UUID[] filter = new UUID[1];
     private static final int REQUEST_ENABLE_BT = 1;
     private static final long SCAN_PERIOD = 5000;
     public static final int REQUEST_ENABLE_BLUETOOTH = 1;
@@ -39,6 +46,7 @@ public class DeviceListActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         mHandler = new Handler();
 
+        filter[0] = UUID.fromString(WhsGattAttributes.WHS_SERVICE_UUID_STRING);
         if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)) {
             finish();
         }
@@ -146,7 +154,7 @@ public class DeviceListActivity extends ListActivity {
                 }
             }, SCAN_PERIOD);
             mScanning = true;
-            mBluetoothAdapter.startLeScan(mLeScanCallback);
+            mBluetoothAdapter.startLeScan(filter, mLeScanCallback);
         } else {
             mScanning = false;
             mBluetoothAdapter.stopLeScan(mLeScanCallback);
