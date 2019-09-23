@@ -20,26 +20,26 @@
     <string name="menu_scan">Scan</string>
     <string name="menu_stop">Stop</string>
     
-    <string name="setting">設定</string>
-    <string name="menu_setting">設定</string>
+    <string name="setting">Setting</string>
+    <string name="menu_setting">Setting</string>
 
     <string name="unknown">Unknown</string>
     
-    <string name="setting_pqrst">心拍波形</string>
-    <string name="setting_rri">心拍間隔</string>
+    <string name="setting_pqrst">PQRST</string>
+    <string name="setting_rri">RRI</string>
     
-    <string name="setting_acceleration_average">移動平均</string>
-    <string name="setting_acceleration_peak">ピークホールド</string>
+    <string name="setting_acceleration_average">Average</string>
+    <string name="setting_acceleration_peak">Peak hold</string>
 
-    <string name="setting_dialog_behavior">動作モードの選択</string>
-    <string name="setting_dialog_acceleration">加速度モードの選択</string>
+    <string name="setting_dialog_behavior">PQRST/RRI</string>
+    <string name="setting_dialog_acceleration">Acceleration Avg./Peak</string>
     
-    <string name="setting_behavior">動作モード</string>
-    <string name="setting_acceleration">加速度モード</string>
+    <string name="setting_behavior">PQRST/RRI</string>
+    <string name="setting_acceleration">Acceleration Avg./Peak</string>
     
-    <string name="label_pqrst">心拍波形</string>
-    <string name="label_rri">心拍間隔</string>
-    <string name="label_temperature">体表温</string>
-    <string name="label_acceleration">加速度</string>
+    <string name="label_pqrst">PQRST</string>
+    <string name="label_rri">RRI</string>
+    <string name="label_temperature">temperature</string>
+    <string name="label_acceleration">acceleration</string>
     
 </resources>

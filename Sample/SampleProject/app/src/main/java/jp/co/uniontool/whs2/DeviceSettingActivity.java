@@ -124,9 +124,9 @@ public class DeviceSettingActivity extends ListActivity {
 
 		mItemListAdapter = new ItemListAdapter();
 		mItemListAdapter.addDevice(new SettingItem(MODE_BEHAVIOR_INDEX, 
-				getString(R.string.setting_behavior), -1, "", "動作モードを設定する"));
+				getString(R.string.setting_behavior), -1, "", ""));
 		mItemListAdapter.addDevice(new SettingItem(MODE_ACCELERATION_INDEX, 
-				getString(R.string.setting_acceleration), -1, "", "加速度モードを設定する"));
+				getString(R.string.setting_acceleration), -1, "", ""));
 		setListAdapter(mItemListAdapter);
 	}
 
